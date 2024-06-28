@@ -588,6 +588,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: undefined
 **좋은 예:**
 
 ```javascript
+// 이게 클로저인듯
 function makeEmployee(name) {
   return {
     getName() {
@@ -606,7 +607,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 ## 클래스
 
-### ES2015/ES6 클래스보다 ES5 일반 함수를 선호하라
+### ES5 일반 함수보다 ES2015/ES6 클래스를 선호하라
 
 고전적인 ES5 클래스의 읽기 가능한 클래스 상속, 구성, 메서드 정의를 얻는 것은 어렵습니다.
 상속이 필요하다면 ES2015/ES6의 클래스를 사용하세요.
@@ -771,7 +772,6 @@ const car = new Car("Ford", "F-150", "red").setColor("pink").save();
 
 ### 상속보다 구성을 선호하라
 
-
 The Gang of Four가 저술한 [_디자인 패턴_](https://en.wikipedia.org/wiki/Design_Patterns)에서 잘 알려진 바와 같이 여러분은 가능한 상속보다는 구성을 더 선호해야 합니다.
 상속을 사용하는 좋은 이유들이 있고 구성을 사용해야 하는 더 좋은 이유들이 있습니다.
 이 격언의 핵심은 여러분이 본능적으로 상속을 원한다면 구성이 여러분의 문제를 더 잘 모델링할 수도 있다고 생각하라는 것입니다. 어떤 경우에는 그렇습니다.
@@ -779,7 +779,7 @@ The Gang of Four가 저술한 [_디자인 패턴_](https://en.wikipedia.org/wiki
 여러분은 "상속을 언제 사용해야 하나요?"라는 궁금증이 생길 수 있습니다.
 이것은 어떤 문제이냐에 따라 다르지만 아래 목록은 구성보다 상속이 더 타당한 때를 보여주는 경우입니다.
 
-1. 상속이 "has-a"가 아닌 "is-a" 관계를 보여주는 경우 (사람->동물 vs. 사용자->사용자 상세).
+1. 상속이 "has-a"가 아닌 **"is-a" 관계**를 보여주는 경우 (사람->동물 vs. 사용자->사용자 상세).
 2. 베이스 클래스로부터 코드를 재사용하는 경우 (사람은 다른 동물들처럼 움직일 수 있음).
 3. 베이스 클래스를 변경하여 파생된 클래스를 전역적으로 변경하려는 경우 (모든 동물은 움직일 때 칼로리 소비량이 바뀜).
 
